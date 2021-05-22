@@ -1,11 +1,11 @@
 import React from "react"
 import ReactDom from "react-dom"
-import Counter from "./Components/counter"
+import Counters from "./Components/counters"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 ReactDom.render(
 
-    <Counter/>
+    <Counters/>
 
     ,document.getElementById("root")
     
