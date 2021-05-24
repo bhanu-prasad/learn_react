@@ -10,6 +10,11 @@ export default class App extends Component {
           { id: 4, value: 0 },
         ],
       };
+
+      constructor(){
+          super()
+          console.log("App - constructor");
+      }
     
       handleIncrement = counter => {
           
