@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Counter extends Component {
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
   };
 
   
@@ -14,13 +14,15 @@ export default class Counter extends Component {
   render() {
     return (
       <div>
-        <span className={this.getBadgeclass()}>{this.func()}</span>
+        <span className={this.getBadgeclass()}>{this.valuefunc()}</span>
         <button
           onClick={this.handleIncrement}
           className="btn btn-secondary btn-sm"
         >
           Increment
         </button>
+        <button onClick={() => this.props.onDelete(this.props.counter.id)} 
+          className="btn btn-danger btn-sm m-2">Delete</button>
       </div>
     );
   }
@@ -31,7 +33,7 @@ export default class Counter extends Component {
     return classes;
   }
 
-  func() {
+  valuefunc() {
     const { value: count } = this.state;
     return count === 0 ? "Zero" : count;
   }
